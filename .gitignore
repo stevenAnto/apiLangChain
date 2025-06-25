@@ -1,0 +1,50 @@
+# Entorno virtual llamado "ambiente"
+ambiente/
+# Entornos virtuales (puede variar el nombre)
+venv/
+env/
+.venv/
+.env/
+
+# Archivos de entorno
+.env
+.env.*
+
+# Archivos pyc / caché
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de logs
+*.log
+
+# SQLite DB (si la usas)
+*.sqlite3
+*.db
+
+# Archivos temporales
+*.tmp
+*.swp
+*.bak
+
+# Archivos creados por Jupyter/VSCode
+.ipynb_checkpoints/
+.vscode/
+
+# Directorios de pruebas o build
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos ocultos de Mac/Linux
+*.~*
+
+# Archivos del navegador o sesiones
+.session
+.cache/
+
