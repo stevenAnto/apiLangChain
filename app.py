@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from services.agent_service import agent_service
 from services.chat_service import chat_service
 from config import Config
 
@@ -36,6 +37,22 @@ def chat():
         "message": message,
         "response": response
     })
+
+
+
+
+@app.route("/agent", methods=["POST"])
+def agent():
+    data = request.get_json()
+    user_input = data.get("input")
+
+    if not user_input:
+        return jsonify({"error": "Falta el campo 'input'"}), 400
+
+    response = agent_service.get_response(user_input)
+    return jsonify({"response": response})
+
+
 
 if __name__=="__main__":
     app.run(debug=True)
