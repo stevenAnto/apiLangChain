@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from services.agent_service import agent_service
 from services.chat_service import chat_service
 from config import Config
