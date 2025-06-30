@@ -60,3 +60,16 @@ Ejecuta un agente LangChain con herramientas (Wikipedia, Tavily) y un modelo Ope
   "input": "¿Quién fue Alan Turing?"
 }
 ```
+### 🧪 Pruebas con Postman
+
+#### 📤 Chat API (`/api/chat`)
+![Chat Postman](assets/chat_basico.png)
+
+#### 🤖 Enlistar
+![Agente Postman](assets/enlistar_docs.png)
+
+#### 📂 Buscar y devolver id
+![Listar archivos](assets/buscar_devolver_id.png)
+
+#### 🔍 Buscar documento no existe
+![Buscar archivo](assets/buscar_archivo_no_existe.png)
