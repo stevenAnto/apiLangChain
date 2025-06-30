@@ -4,6 +4,7 @@ from services.chat_service import chat_service
 from config import Config
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api/chat', methods=['POST'])
 def chat():

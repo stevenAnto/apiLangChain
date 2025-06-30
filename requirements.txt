@@ -14,6 +14,7 @@ dataclasses-json==0.6.7
 distro==1.9.0
 exceptiongroup==1.3.0
 flask==3.0.3
+flask-cors
 frozenlist==1.5.0
 gunicorn==20.1.0
 greenlet==3.1.1
