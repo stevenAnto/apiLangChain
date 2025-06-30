@@ -12,7 +12,7 @@ class ChatService:
         
         # Crear el prompt template
         self.prompt = ChatPromptTemplate.from_messages([
-            ("system", "Eres un asistente de IA, puedes responder a preguntas sobre IA"),
+            ("system", "Eres un asistente de puedes responder a preguntas sobre IA, wikipedia, internet y Google Drive"),
             ("user", "{input}")
         ])
         

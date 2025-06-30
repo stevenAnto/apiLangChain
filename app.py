@@ -3,6 +3,7 @@ from flask_cors import CORS
 from services.agent_service import agent_service
 from services.chat_service import chat_service
 from config import Config
+from services.tools.enlistar_tool import listar_archivos_drive
 
 app = Flask(__name__)
 CORS(app)
@@ -56,6 +57,21 @@ def agent():
 
 
 
-if __name__=="__main__":
+# Para prueba enlistar usando api google Drive
+@app.route('/api/listar-documentos', methods=['POST'])
+def listar_documentos():
+    data = request.get_json()
+
+    folder_id = data.get('folder_id')
+    page_size = data.get('page_size', 20)  # opcional
+
+    if not folder_id:
+        return jsonify({"error": "El campo 'folder_id' es requerido."}), 400
+
+    resultado = listar_archivos_drive(folder_id, page_size)
+
+    return jsonify({"resultado": resultado})
+
+if __name__ == '__main__':
     app.run(debug=True)
 

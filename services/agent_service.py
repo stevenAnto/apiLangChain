@@ -5,6 +5,7 @@ from langchain.agents import create_tool_calling_agent, AgentExecutor
 from langchain import hub
 from langchain_openai import ChatOpenAI
 from config import Config
+from services.tools.enlistar_tool import listar_archivos_tool
 
 
 class AgentService:
@@ -12,7 +13,7 @@ class AgentService:
         # Herramientas
         wikipedia_tool = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper(top_k_results=1))
         tavily_tool = TavilySearchResults(tavily_api_key=Config.TAVILY_API_KEY)
-        tools = [wikipedia_tool, tavily_tool]
+        tools = [wikipedia_tool, tavily_tool, listar_archivos_tool ]
 
         # Modelo
         llm = ChatOpenAI(model=Config.MODEL_NAME, api_key=Config.OPENAI_API_KEY)
